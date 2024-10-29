@@ -1,0 +1,16 @@
+{
+    "username": "svc.it.lcmqa@nutanix.com",
+    "password": "fwH%pb3C*@a9DZP+6vJV",
+    "urls": [
+        "https://jita-web-server-1.eng.nutanix.com/results?task_ids=671b7361b5e475f4f33f2f8f&active_tab=2&merge_tests=false",
+        "https://jita-web-server-1.eng.nutanix.com/results?task_ids=671b1b768e79ced0d28f349a&active_tab=2&merge_tests=false",
+        "https://jita-web-server-1.eng.nutanix.com/results?task_ids=671b1970b5e475f4e2272519&active_tab=2&merge_tests=false",
+        "https://jita-web-server-1.eng.nutanix.com/results?task_ids=6710aa3fd24d82333b47876f&active_tab=2&merge_tests=false",
+        "https://jita-web-server-1.eng.nutanix.com/results?task_ids=6710a8df2bc0c45dcb8d92d6&active_tab=2&merge_tests=false",
+        "https://jita-web-server-1.eng.nutanix.com/results?task_ids=6710a8d1d24d82333f7e5440&active_tab=2&merge_tests=false",
+        "https://jita-web-server-1.eng.nutanix.com/results?task_ids=670f43448e79ced0e3cb81cb&active_tab=2&merge_tests=false",
+        "https://jita-web-server-1.eng.nutanix.com/results?task_ids=670e9852d24d826af9ae8720&active_tab=2&merge_tests=false",
+        "https://jita.eng.nutanix.com/results?task_ids=670fb0288e79ced0d68cd66a&active_tab=2&merge_tests=false"
+        ]
+}
+
