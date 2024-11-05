@@ -36,7 +36,7 @@ bash install_requirements.sh
 
 ### 1. JITA Data Collection
 ```bash
-python jita_fetching.py
+python jita_fetching.py jita_urls.json
 ```
 This script:
 - Fetches failure data from provided JITA URLs
