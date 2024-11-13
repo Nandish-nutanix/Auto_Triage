@@ -32,6 +32,17 @@ bash install_requirements.sh
    }
    ```
 
+  - Example of JITA urls: 
+  ```json
+  {
+     "urls": [
+        "https://jita-web-server-1.eng.nutanix.com/results?task_ids=6732f3448e79ced0e93a67dc&active_tab=2&merge_tests=false",
+        "https://jita-web-server-1.eng.nutanix.com/results?task_ids=6732bcfa8e79cec01c35e326&active_tab=2&merge_tests=false",
+        "https://jita-web-server-1.eng.nutanix.com/results?task_ids=672f198a2bc0c41b29373495&active_tab=2&merge_tests=false"
+     ]
+  }
+```
+
 ## Usage
 
 ### 1. JITA Data Collection
