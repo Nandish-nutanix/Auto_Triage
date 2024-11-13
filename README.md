@@ -42,7 +42,9 @@ bash install_requirements.sh
      ]
   }
 ```
-
+  - Note: Update `generic_failures.json` with the exception summary of any specific failures you want to remove from your execution run
+  - Set it as False if not required
+    
 ## Usage
 
 ### 1. JITA Data Collection
