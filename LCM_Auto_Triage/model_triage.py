@@ -1,6 +1,10 @@
 """
 Module for generating embeddings, grouping test cases,
 and calculating similarity between JIRA issues and test cases.
+
+Copyright (c) 2024 Nutanix Inc. All rights reserved.
+
+Author:nandish.chokshi@nutanix.com
 """
 import os
 import numpy as np
@@ -183,8 +187,7 @@ class EmbeddingProcessor:
           embedding in group_embeddings
     ]
 
-    output_file = f'{output_dir}/\
-        groupings_reduced_with_similarity_and_embeddings.xlsx'
+    output_file = f'{output_dir}/groupings_reduced_with_similarity_and_embeddings.xlsx'
     os.makedirs(output_dir, exist_ok=True)
 
     with pd.ExcelWriter(output_file, engine='xlsxwriter') as writer:
@@ -193,8 +196,7 @@ class EmbeddingProcessor:
 
     STEP(f"Test Case groupings and embeddings saved to {output_file}")
     INFO(
-      f"Total unique/distinct test cases in the 'Grouped Test Cases' sheet:\
-        "f"{group_df['Test Name'].nunique()}")
+      f"Total unique/distinct test cases in the 'Grouped Test Cases' sheet:"f"{group_df['Test Name'].nunique()}")
     return group_df
 
   def calculate_jira_jita_similarity(self, df_jira, df_jita, output_dir):
@@ -240,7 +242,7 @@ class EmbeddingProcessor:
             'Similarity Score': similarity_score})
 
     df_similarity = pd.DataFrame(similarity_data)
-    df_similarity_cleaned = df_similarity.drop_duplicates(inplace=True)
+    df_similarity_cleaned = df_similarity.drop_duplicates()
     df_similarity_cleaned = df_similarity_cleaned.sort_values(
       by='Similarity Score', ascending=False)
 
@@ -258,10 +260,8 @@ class EmbeddingProcessor:
         engine='openpyxl') as writer:
       grouped_data.to_excel(writer, sheet_name='Formatted Data', index=False)
 
-    STEP("JIRA and JITA Group Similarity Results\
-        with Test Case Names have been saved.")
-    STEP("Grouped Data by 'JITA Test Case' and\
-        JIRA has been saved to 'Formatted Data' sheet.")
+    STEP("JIRA and JITA Group Similarity Results with Test Case Names have been saved.")
+    STEP("Grouped Data by 'JITA Test Case' and JIRA has been saved to 'Formatted Data' sheet.")
 
     formatted_test_cases = set(grouped_data['Jita Test Case'].tolist())
     grouped_test_cases = set(df_jita['Test Name'].tolist())

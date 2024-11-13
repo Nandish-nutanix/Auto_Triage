@@ -7,10 +7,11 @@ from urllib.parse import urlparse, parse_qs
 from framework.lib.nulog import INFO, STEP, WARN
 from framework.exceptions.entity_error import NuTestError
 from experimental.dr.lib.jita import gen, DraasJita
+import os
 
 def get_failed_test_results(jita_url, username, password):
     STEP(f"Processing URL: {jita_url}")
-
+    
     failed_results = []
 
     try:
@@ -110,11 +111,25 @@ def process_urls_from_json(file_path):
             all_failed_results.extend(results)
 
     if all_failed_results:
-        df = pd.DataFrame(all_failed_results)
-        
         output_file = 'failed_test_results.xlsx'
-        df.to_excel(output_file, index=False)
-        INFO(f"Failed test results have been saved to {output_file}.")
+
+
+        if os.path.exists(output_file):
+            existing_df = pd.read_excel(output_file)
+            existing_ids = set(existing_df['Test ID'].astype(str))
+        else:
+            existing_df = pd.DataFrame()
+            existing_ids = set()
+
+        new_results = [res for res in all_failed_results if res['Test ID'] not in existing_ids]
+        new_df = pd.DataFrame(new_results)
+
+        if not new_df.empty:
+            updated_df = pd.concat([existing_df, new_df], ignore_index=True)
+            updated_df.to_excel(output_file, index=False)
+            INFO(f"Updated failed test results have been saved to {output_file}.")
+        else:
+            INFO("No new failed test results found to save.")
     else:
         INFO("No failed test results found to save.")
 
@@ -125,6 +140,3 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     process_urls_from_json(args.file_path)
-
-
-

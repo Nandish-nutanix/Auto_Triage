@@ -1,0 +1,12 @@
+{
+    "username": "svc.it.lcmqa@nutanix.com",
+    "password": "fwH%pb3C*@a9DZP+6vJV",
+    "urls": [
+        "https://jita-web-server-1.eng.nutanix.com/results?task_ids=673354da2bc0c4c37ce9ee4c&active_tab=2&merge_tests=false",
+        "https://jita-web-server-1.eng.nutanix.com/results?task_ids=6732f91c8e79ced0cee02527&active_tab=2&merge_tests=false",
+        "https://jita-web-server-1.eng.nutanix.com/results?task_ids=6732f3448e79ced0e93a67dc&active_tab=2&merge_tests=false",
+        "https://jita-web-server-1.eng.nutanix.com/results?task_ids=6732bcfa8e79cec01c35e326&active_tab=2&merge_tests=false",
+        "https://jita-web-server-1.eng.nutanix.com/results?task_ids=672f198a2bc0c41b29373495&active_tab=2&merge_tests=false"
+        ]
+}
+
